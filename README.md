@@ -1,2 +1,2 @@
-# bookrepo
-Book checkout app to help manage library of software technology and management books.
+# Dewey
+In honor of Melvil Dewey, founder of the Dewey Decimal System, we have created an application to catalog the world's books.
