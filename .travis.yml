@@ -1,11 +1,13 @@
 language: python
 python:
   - "2.7"
+env:
+  - FLASK=0.10.1
 # command to install dependencies
 install:
-  - "pip install -q Flask=$FLASK"
-  - "pip install -r requirements.txt"
-  - "pip install -q -e ."
+  - pip install -q Flask=$FLASK
+  - pip install -r requirements.txt
+  - pip install -q -e .
 # command to run tests
 script:
-  - "python dewey_tests.py"
+  - python dewey_tests.py
