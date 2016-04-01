@@ -3,7 +3,7 @@ import dewey
 import unittest
 import tempfile
 
-class FlaskrTestCase(unittest.TestCase):
+class DeweyTestCase(unittest.TestCase):
 
     def setUp(self):
         self.db_fd, dewey.app.config['DATABASE'] = tempfile.mkstemp()

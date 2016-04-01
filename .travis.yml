@@ -2,6 +2,10 @@ language: python
 python:
   - "2.7"
 # command to install dependencies
-install: "pip install -r requirements.txt"
+install:
+  - "pip install -q Flask=$FLASK"
+  - "pip install -r requirements.txt"
+  - "pip install -q -e ."
 # command to run tests
-script: python dewey_tests.py
+script:
+  - "python dewey_tests.py"
