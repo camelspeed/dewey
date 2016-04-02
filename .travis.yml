@@ -5,7 +5,7 @@ env:
   - FLASK=0.10.1
 # command to install dependencies
 install:
-  - pip install -q Flask=$FLASK
+  - pip install -q Flask==$FLASK
   - pip install -r requirements.txt
 # command to run tests
 script:
