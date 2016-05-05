@@ -2,7 +2,7 @@
 #
 # The application keeps track of books.
 #
-##########################
+###############################################
 
 # all the imports
 import sqlite3
