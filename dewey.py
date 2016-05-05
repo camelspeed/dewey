@@ -1,4 +1,8 @@
-# author: Johnny Mohseni
+# author: Johnny Mohseni - Booz Allen Hamilton
+#
+# The application keeps track of books.
+#
+##########################
 
 # all the imports
 import sqlite3
