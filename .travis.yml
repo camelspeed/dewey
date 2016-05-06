@@ -30,6 +30,3 @@ deploy:
   region: us-east-1
   on: *2
   wait-until-deployed: true
-before_deploy:
-- mkdir -p dpl_cd_upload
-- mv camelspeed-dewey-webapp dpl_cd_upload/camelspeed-dewey-webapp
