@@ -24,7 +24,7 @@ deploy:
   secret_access_key: *1
   bucket: camelspeed-dewey
   key: 'camelspeed/dewey'
-  bundle_type: zip
+  bundle_type: python
   application: camelspeed-dewey-webapp
   deployment_group: camelspeed-dewey-webapps
   region: us-east-1
