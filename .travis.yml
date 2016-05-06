@@ -7,10 +7,11 @@ install:
 script:
 - python dewey_tests.py
 - coverage run dewey_tests.py
-after_success:
-- coveralls
+before_deploy:
+- zip -r latest *
+- mkdir -p dpl_cd_upload
+- mv latest.zip dpl_cd_upload/latest.zip
 deploy:
-- echo "starting deployment..."
 - provider: s3
   access_key_id: AKIAIHY5R65TNVU6LQRQ
   secret_access_key: &1
@@ -22,17 +23,15 @@ deploy:
   bucket: camelspeed-dewey
 - provider: codedeploy
   access_key_id: AKIAIHY5R65TNVU6LQRQ
-  secret_access_key: *1
+  secret_access_key: 1
   bucket: camelspeed-dewey
   key: 'latest'
   bundle_type: zip
   application: camelspeed-dewey-webapp
   deployment_group: camelspeed-dewey-webapps
   region: us-east-1
-  on: *2
+  on: 2
   wait-until-deployed: true
-before_deploy:
-- echo "doing deploy tasks..."
-- zip -r latest *
-- mkdir -p dpl_cd_upload
-- mv latest.zip dpl_cd_upload/latest.zip
+after_success:
+- coveralls
+
