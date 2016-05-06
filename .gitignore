@@ -2,3 +2,5 @@
 *.iml
 venv/*
 *.pyc
+# Travis CI Ruby Client is used to help generate the .travis.yml settings and encryption
+*.ruby*

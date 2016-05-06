@@ -1,17 +1,35 @@
 language:
-  - python
-
+- python
 python:
-  - 2.7
-
-# command to install dependencies
+- 2.7
 install:
-  - pip install -r requirements.txt
-
-# command to run tests
+- pip install -r requirements.txt
 script:
-  - python dewey_tests.py
-  - coverage run dewey_tests.py
-
+- python dewey_tests.py
+- coverage run dewey_tests.py
 after_success:
-  - coveralls
+- coveralls
+deploy:
+- provider: s3
+  access_key_id: AKIAIHY5R65TNVU6LQRQ
+  secret_access_key: &1
+    secure: 3SNbIAVpiseBQEU5BiFpwV9G2K9ZFORC+V7mift1Y+wRiunCXrWuaRb7yr+hHfxf/wgEMir46geKV7HCmBu4svvdgRKENDmj7bv0mvUlLN3jvlF+BDzHNTFcCW0ZiTObf0LacEGN4W+63i1VqPBYNRy0a3AD62HRAjzbNW8JkMSPVYjGC/vTGKtab3ZyBS2S4MxTJgWbkc50TZ6g2UhkLxE5Tl/4QvACkF+uIEi0FCtuFOpcD68x3KhbQDPYtOSszJ+k2ikTTJeW2mQsleF+b6RK3wWvPKxQZLYsOmfVTg0jn6B2SGs5+iWRFCDqmF7jmgy3x1ImsV1DLQizBrfTlmxuy3p5RV7E8dVEUVB2ympWvAVRTMCTFeAaHAFlMO7ip2oA8frz8snm5FyNLc13E+sj+LQ/AaTwz3IbAiA40GrFQC7rmaG5JfVnotSoPlkeR4xhaZ6KYIaXlnvPlVSBJAtzWwPbll5/7wNi37apekubHpBr5n01SEaMX1W+T3nbvgnO+bJ1/ElCtEvJRca7udQ7vlrTlouUhk+V5Ot8KTJGSRBx28qKn4vD3elsdmPsTkPWQ8Cj4mw94+X91s8XzuzcDRVCzS1UFTN3hCN2dNZYA5+O3TWYJF0SPMUXppKiRJCp8+E9+beF1OJo0/bzJ4imeqQ9+N6dv2t1kttA+9E=
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: camelspeed/dewey
+  bucket: camelspeed-dewey
+- provider: codedeploy
+  access_key_id: AKIAIHY5R65TNVU6LQRQ
+  secret_access_key: *1
+  bucket: camelspeed-dewey
+  key: 'camelspeed-dewey-webapp'
+  bundle_type: zip
+  application: camelspeed-dewey-webapp
+  deployment_group: camelspeed-dewey-webapps
+  region: us-east-1
+  on: *2
+  wait-until-deployed: true
+before_deploy:
+- mkdir -p dpl_cd_upload
+- mv 123 dpl_cd_upload/123
