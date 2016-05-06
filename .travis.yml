@@ -32,4 +32,4 @@ deploy:
   wait-until-deployed: true
 before_deploy:
 - mkdir -p dpl_cd_upload
-- mv 123 dpl_cd_upload/123
+- mv camelspeed-dewey-webapp dpl_cd_upload/camelspeed-dewey-webapp
