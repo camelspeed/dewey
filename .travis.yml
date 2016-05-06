@@ -23,13 +23,14 @@ deploy:
   access_key_id: AKIAIHY5R65TNVU6LQRQ
   secret_access_key: *1
   bucket: camelspeed-dewey
-  key: 'camelspeed/dewey'
-  bundle_type: python
+  key: 'latest'
+  bundle_type: zip
   application: camelspeed-dewey-webapp
   deployment_group: camelspeed-dewey-webapps
   region: us-east-1
   on: *2
   wait-until-deployed: true
 before_deploy:
+- zip -r latest *
 - mkdir -p dpl_cd_upload
-- mv camelspeed-dewey dpl_cd_upload/camelspeed-dewey
+- mv latest.zip dpl_cd_upload/latest.zip
