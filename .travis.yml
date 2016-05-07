@@ -23,14 +23,14 @@ deploy:
   bucket: camelspeed-dewey
 - provider: codedeploy
   access_key_id: AKIAIHY5R65TNVU6LQRQ
-  secret_access_key: 1
+  secret_access_key: *1
   bucket: camelspeed-dewey
   key: 'latest'
   bundle_type: zip
   application: camelspeed-dewey-webapp
   deployment_group: camelspeed-dewey-webapps
   region: us-east-1
-  on: 2
+  on: *2
   wait-until-deployed: true
 after_success:
 - coveralls
