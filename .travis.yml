@@ -20,7 +20,7 @@ deploy:
   skip_cleanup: true
   on: &2
     repo: camelspeed/dewey
-  bucket: camelspeed-dewey-webapp
+  bucket: camelspeed-dewey
 - provider: codedeploy
   access_key_id: AKIAIHY5R65TNVU6LQRQ
   secret_access_key: *1
