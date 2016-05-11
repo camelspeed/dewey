@@ -21,6 +21,7 @@ deploy:
   on: &2
     repo: camelspeed/dewey
   bucket: camelspeed-dewey
+  region: us-west-2
 - provider: codedeploy
   access_key_id: AKIAIHY5R65TNVU6LQRQ
   secret_access_key: *1
@@ -29,7 +30,7 @@ deploy:
   bundle_type: zip
   application: camelspeed-dewey-webapp
   deployment_group: camelspeed-dewey-webapps
-  region: us-west-2
+  region: us-east-1
   on: *2
   wait-until-deployed: true
 after_success:
