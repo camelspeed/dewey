@@ -29,7 +29,7 @@ deploy:
   bundle_type: zip
   application: camelspeed-dewey-webapp
   deployment_group: camelspeed-dewey-webapps
-  region: us-east-1
+  region: us-west-2
   on: *2
   wait-until-deployed: true
 after_success:
