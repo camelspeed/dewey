@@ -25,7 +25,7 @@ deploy:
   access_key_id: AKIAIHY5R65TNVU6LQRQ
   secret_access_key: *1
   bucket: camelspeed-dewey
-  key: 'latest'
+  key: latest.zip
   bundle_type: zip
   application: camelspeed-dewey-webapp
   deployment_group: camelspeed-dewey-webapps
