@@ -1,0 +1,1 @@
+sqlite3 /webapps/db/dewey.db.db < schema.sql
