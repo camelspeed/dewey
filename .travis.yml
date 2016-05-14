@@ -33,7 +33,6 @@ deploy:
   deployment_group: camelspeed-dewey-webapps
   region: us-east-1
   on: *2
-  wait-until-deployed: true
 after_success:
 - coveralls
 
