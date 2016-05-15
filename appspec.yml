@@ -24,7 +24,7 @@ os: linux
 #   may cause associated deployments to fail.
 files:
   - source: /
-    destination: /webapps/dewey
+    destination: webapps/dewey
 # For deployments to Amazon Linux, Ubuntu Server, or RHEL instances,
 #   you can specify a "permissions" 
 #   section here that describes special permissions to apply to the files 
@@ -96,12 +96,12 @@ hooks:
 # During the AfterInstall deployment lifecycle event, run the commands 
 #   in the script specified in "location".
   AfterInstall:
-    - location: /webapps/dewey/create_db.sh
+    - location: webapps/dewey/create_db.sh
       timeout: 30
 # During the ApplicationStart deployment lifecycle event, run the commands
 #   in the script specified in "location".
   ApplicationStart:
-    - location: /webapps/dewey/start_app.sh
+    - location: webapps/dewey/start_app.sh
       timeout: 30
 # During the ValidateService deployment lifecycle event, run the commands 
 #   in the script specified in "location".
