@@ -1,1 +1,1 @@
-python /webapps/dewey/dewey.py
+python /webapps/dewey/dewey.py &
