@@ -1,1 +1,2 @@
-python /webapps/dewey/dewey.py &
+#!/usr/bin/env bash
+nohup python dewey.py &
