@@ -1,1 +1,1 @@
-python ./dewey.py
+python ~/dewey.py
