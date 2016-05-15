@@ -1,1 +1,1 @@
-sqlite3 /tmp/dewey.db < schema.sql
+sqlite3 /tmp/dewey.db < ./schema.sql
