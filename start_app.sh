@@ -1,1 +1,2 @@
-nohup python /webapps/dewey/dewey.py &
+cd /webapps/dewey
+gunicorn dewey:app -p dewey.pid -b 0.0.0.0:80 -D
