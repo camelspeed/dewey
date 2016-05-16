@@ -19,7 +19,7 @@
     {% for book in books %}
     <li><h2>{{ book.title }}</h2>{{ book.author|safe }}
         {% else %}
-    <li><em>Unbelievable!  No books here so far</em>
+    <li><em>Reading is fundamental so let's add some books because none exist!</em>
         {% endfor %}
 </ul>
 {% endblock %}
