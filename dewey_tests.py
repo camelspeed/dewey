@@ -17,7 +17,7 @@ class DeweyTestCase(unittest.TestCase):
 
     def test_no_books(self):
         rv = self.app.get('/')
-        assert 'Reading is fundamental' in rv.data
+        assert 'Reading is FUNdamental' in rv.data
 
     def login(self, username, password):
         return self.app.post('/login', data=dict(
